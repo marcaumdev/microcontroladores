@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "author": "Marcaum",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard", "id": "bb1", "top": -12.6, "left": -304.4, "attrs": {} },
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 152.46,
+      "left": -233.5,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 63.6,
+      "left": -255.4,
+      "attrs": { "color": "purple" }
+    },
+    { "type": "wokwi-led", "id": "led2", "top": 63.6, "left": -217, "attrs": { "color": "cyan" } },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": 63.6,
+      "left": -178.6,
+      "attrs": { "color": "orange" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:GND.2", "bb1:bn.1", "black", [ "v0" ] ],
+    [ "bb1:bn.3", "bb1:5b.j", "black", [ "v0" ] ],
+    [ "bb1:bn.6", "bb1:9b.j", "black", [ "v0" ] ],
+    [ "bb1:bn.10", "bb1:13b.j", "black", [ "v0" ] ],
+    [ "esp:19", "bb1:10b.j", "cyan", [ "v0" ] ],
+    [ "esp:16", "bb1:14b.j", "orange", [ "v0" ] ],
+    [ "esp:22", "bb1:6b.j", "purple", [ "v-9.6", "h9.6" ] ],
+    [ "led1:A", "bb1:6b.f", "", [ "$bb" ] ],
+    [ "led1:C", "bb1:5b.f", "", [ "$bb" ] ],
+    [ "led2:A", "bb1:10b.f", "", [ "$bb" ] ],
+    [ "led2:C", "bb1:9b.f", "", [ "$bb" ] ],
+    [ "led3:A", "bb1:14b.f", "", [ "$bb" ] ],
+    [ "led3:C", "bb1:13b.f", "", [ "$bb" ] ]
+  ],
+  "dependencies": {}
+}
